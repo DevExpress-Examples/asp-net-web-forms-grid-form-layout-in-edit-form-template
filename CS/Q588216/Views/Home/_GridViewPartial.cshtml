@@ -1,0 +1,106 @@
+@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "GridView";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartial" };
+
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Home", Action = "GridViewPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Home", Action = "GridViewPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Home", Action = "GridViewPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.ShowNewButton = true;
+        settings.CommandColumn.ShowDeleteButton = true;
+        settings.CommandColumn.ShowEditButton = true;
+
+        settings.KeyFieldName = "ModelID";
+        settings.SetEditFormTemplateContent(c =>
+        {
+            var editItem = ViewData["Item"] != null ? ViewData["Item"] : c.DataItem;
+            Html.DevExpress().FormLayout(set =>
+               {
+                   set.Name = "FormLayout";
+                   set.Items.AddGroupItem(groupSettings =>
+                   {
+                       groupSettings.Caption = "ModelGroup";
+                       groupSettings.Name = "group";
+                       groupSettings.Items.Add(item =>
+                       {
+                           item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
+                           item.Name = item.Caption = "Name";
+                           item.SetNestedContent(() =>
+                           {
+                               Html.DevExpress().TextBox(tb =>
+                               {
+                                   tb.Name = "ModelName";
+                                   tb.ShowModelErrors = true;
+                               }).Bind(DataBinder.Eval(editItem, "ModelName")).Render();
+                           });
+                       });
+                       groupSettings.Items.Add(item =>
+                      {
+                          item.NestedExtensionType = FormLayoutNestedExtensionItemType.DateEdit;
+                          item.Name = item.Caption = "Date";
+                          item.SetNestedContent(() =>
+                          {
+                              Html.DevExpress().DateEdit(tb =>
+                              {
+                                  tb.Name = "ModelDate";
+                                  tb.ShowModelErrors = true;
+                              }).Bind(DataBinder.Eval(editItem, "ModelDate")).Render();
+                          });
+                      });
+                       groupSettings.Items.Add(item =>
+                      {
+                          item.NestedExtensionType = FormLayoutNestedExtensionItemType.CheckBox;
+                          item.Name = item.Caption = "State";
+                          item.SetNestedContent(() =>
+                          {
+                              Html.DevExpress().CheckBox(tb =>
+                              {
+                                  tb.Name = "ModelState";
+                                  tb.ShowModelErrors = true;
+                              }).Bind(DataBinder.Eval(editItem, "ModelState")).Render();
+                          });
+                      });
+                   });               
+               }).Render();
+            Html.DevExpress().Button(
+               btnSettings =>
+               {
+                   btnSettings.Name = "btnUpdate";
+                   btnSettings.UseSubmitBehavior = false;
+                   btnSettings.Text = "Update";
+                   btnSettings.ClientSideEvents.Click = "function(s, e){ GridView.UpdateEdit(); }";
+               }
+           )
+           .Render();
+            Html.DevExpress().Button(
+                btnSettings =>
+                {
+                    btnSettings.Name = "btnCancel";
+                    btnSettings.UseSubmitBehavior = false;
+                    btnSettings.Text = "Cancel";
+                    btnSettings.ClientSideEvents.Click = "function(s, e){ GridView.CancelEdit(); }";
+                }
+            )
+            .Render();
+            
+        });
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = true;
+        settings.Settings.ShowFilterRow = true;
+        settings.SettingsBehavior.AllowSelectByRowClick = false;
+        settings.Columns.Add("ModelID");
+        settings.Columns.Add("ModelName");
+        settings.Columns.Add("ModelState");
+        settings.Columns.Add("ModelDate");
+    });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()
