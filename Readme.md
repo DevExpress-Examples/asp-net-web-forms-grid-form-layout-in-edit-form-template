@@ -1,3 +1,12 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [HomeController.cs](./CS/Q588216/Controllers/HomeController.cs) (VB: [HomeController.vb](./VB/Q588216/Controllers/HomeController.vb))
+* [MyModel.cs](./CS/Q588216/Models/MyModel.cs) (VB: [MyModel.vb](./VB/Q588216/Models/MyModel.vb))
+* **[_GridViewPartial.cshtml](./CS/Q588216/Views/Home/_GridViewPartial.cshtml)**
+* [Index.cshtml](./CS/Q588216/Views/Home/Index.cshtml)
+* [_Layout.cshtml](./CS/Q588216/Views/Shared/_Layout.cshtml)
+<!-- default file list end -->
 # A simple implementation of FormLayout inside EditFormTemplate
 
 
