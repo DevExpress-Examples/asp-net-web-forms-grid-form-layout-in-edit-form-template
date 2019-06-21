@@ -8,6 +8,9 @@
 * [_Layout.cshtml](./CS/Q588216/Views/Shared/_Layout.cshtml)
 <!-- default file list end -->
 # A simple implementation of FormLayout inside EditFormTemplate
+<!-- run online -->
+**[[Run Online]](https://codecentral.devexpress.com/t102593)**
+<!-- run online end -->
 
 
 <p>This example demonstrates how to define the FormLayout extension within EditFormTemplate using the SetEditFormTemplateContent method.<br /><br />See the <a href="https://www.devexpress.com/Support/Center/p/T163285">GridView - EditFormTemplate with strong-typed FormLayout</a> example for how to achieve this functionality with using a strong-typed FormLayout.</p>
