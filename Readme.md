@@ -9,7 +9,7 @@
 <!-- default file list end -->
 # A simple implementation of FormLayout inside EditFormTemplate
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/t102593)**
+**[[Run Online]](https://codecentral.devexpress.com/t102593/)**
 <!-- run online end -->
 
 
