@@ -12,6 +12,17 @@ This example demonstrates how to use the [SetEditFormTemplateContent](https://do
 
 ![](form-layout-in-grid-edit-form.png)
 
+```csharp
+settings.SetEditFormTemplateContent(c => {
+    var editItem = ViewData["Item"] != null ? ViewData["Item"] : c.DataItem;
+    Html.DevExpress().FormLayout(set => {
+        set.Name = "FormLayout";
+        // ...               
+    }).Render();
+  // ...
+});
+```
+
 ## Files to Review
 
 * [_GridViewPartial.cshtml](./CS/Q588216/Views/Home/_GridViewPartial.cshtml)
