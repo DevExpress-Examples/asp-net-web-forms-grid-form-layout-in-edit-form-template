@@ -5,9 +5,6 @@
 <!-- default badges end -->
 
 # Grid View for ASP.NET Web Forms - How to define FormLayout inside edit form template
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/128549399/)**
-<!-- run online end -->
 
 This example demonstrates how to use the [SetEditFormTemplateContent](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.GridViewSettings.SetEditFormTemplateContent(System.Action-DevExpress.Web.GridViewEditFormTemplateContainer-)) method to define the [FormLayout](https://docs.devexpress.com/AspNetMvc/16028/components/site-navigation-and-layout/formlayout) extension in edit form template.
 
