@@ -1,6 +1,6 @@
 Imports Microsoft.VisualBasic
 Imports System
-Imports Microsoft.Web.WebPages.OAuth
+' Imports Microsoft.Web.WebPages.OAuth
 
 Namespace Q588216
 	Public NotInheritable Class AuthConfig

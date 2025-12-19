@@ -1,5 +1,3 @@
-using Microsoft.Web.WebPages.OAuth;
-
 namespace Q588216 {
     public static class AuthConfig {
         public static void RegisterAuth() {
