@@ -5,7 +5,7 @@
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
 
-# Grid View for ASP.NET Web Forms - How to define FormLayout inside edit form template
+# Grid View for ASP.NET MVC - How to define FormLayout inside edit form template
 
 This example demonstrates how to use the [SetEditFormTemplateContent](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.GridViewSettings.SetEditFormTemplateContent(System.Action-DevExpress.Web.GridViewEditFormTemplateContainer-)) method to define the [FormLayout](https://docs.devexpress.com/AspNetMvc/16028/components/site-navigation-and-layout/formlayout) extension in edit form template.
 
@@ -33,3 +33,4 @@ settings.SetEditFormTemplateContent(c => {
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
