@@ -140,8 +140,6 @@
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
     <Content Include="packages.config" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <None Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Views\Web.config" />
     <None Include="Views\Home\Index.vbhtml" />
     <None Include="Views\Home\_GridViewPartial.vbhtml" />
